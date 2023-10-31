@@ -5,18 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
+<h1 class="name"></h1>
+<p class="username"></p>
+<p class="email"></p>
+<p class="phone"></p>
+<p class="website"></p>
+<p class="address"></p>
+<p class="company"></p>
+
 <body>
     <button onclick="getUsers()"></button>
-    <h1 class="title"></h1>
-    <p class="body"></p>
     <script>
         async function getUsers() {
-            const resp = await fetch("https://jsonplaceholder.typicode.com/posts")
-            const  posts = await resp.json()
+            const resp = await fetch("https://jsonplaceholder.typicode.com/users")
+            const  users = await resp.json()
 
-            document.querySelector(".title").innerText = post[0].title
-            document.querySelector(".body").innerText = post[0].body
+            document.querySelector(".name").innerText = users[1].name
+            document.querySelector(".username").innerText = users[1].username
+            document.querySelector(".email").innerText = users[1].email
+            document.querySelector(".phone").innerText = users[1].phone
+            document.querySelector(".website").innerText = users[1].website
+            document.querySelector(".address").innerText = users[1].address
+            document.querySelector(".address").innerText = `${users[1].address.street}, ${users[1].address.city}, ${users[1].address.zipcode}`
+            document.querySelector(".company").innerText = `${users[1].company.name}`
         }
+        getUsers()
     </script>
+
 </body>
 </html>
