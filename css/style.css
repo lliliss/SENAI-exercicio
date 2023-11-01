@@ -1,0 +1,19 @@
+table{
+    border: 1px solid grey;
+    width: 85%;
+}
+th{
+    background-color: grey;
+    color: white;
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+td{
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+button{
+    background-color: ghostwhite;
+    border: black;
+    padding: 5px;
+}

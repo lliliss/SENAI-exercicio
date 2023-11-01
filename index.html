@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Profile</title>
 </head>
 
 <h1 class="name"></h1>
@@ -15,23 +16,57 @@
 <p class="company"></p>
 
 <body>
+    <header id="header"></header>
+    <main id="main">
+        <section class="card">
+            <h2 class = "card-title">Lista de Usuários</h2>
+            <table class="card-table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Usuário</th>
+                        <th>Email</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody class="js-user-line"></tbody>
+            </table>
+        </section>
+    </main>
+    <script src="app.js"></script>
+
+
+
+
+
+<!--<table id="main.tabela">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Usuário</th>
+        </tr>
+    </thead>
+</table>
+
+<body>
     <button onclick="getUsers()"></button>
     <script>
         async function getUsers() {
             const resp = await fetch("https://jsonplaceholder.typicode.com/users")
             const  users = await resp.json()
 
-            document.querySelector(".name").innerText = users[1].name
-            document.querySelector(".username").innerText = users[1].username
-            document.querySelector(".email").innerText = users[1].email
-            document.querySelector(".phone").innerText = users[1].phone
-            document.querySelector(".website").innerText = users[1].website
-            document.querySelector(".address").innerText = users[1].address
-            document.querySelector(".address").innerText = `${users[1].address.street}, ${users[1].address.city}, ${users[1].address.zipcode}`
-            document.querySelector(".company").innerText = `${users[1].company.name}`
+            document.querySelector(".name").innerText = users[0].name
+            document.querySelector(".username").innerText = users[0].username
+            document.querySelector(".email").innerText = users[0].email
+            document.querySelector(".phone").innerText = users[0].phone
+            document.querySelector(".website").innerText = users[0].website
+            document.querySelector(".address").innerText = `${users[0].address.street}, ${users[0].address.city}, ${users[0].address.zipcode}`
+            document.querySelector(".company").innerText = `${users[0].company.name}`
+
         }
         getUsers()
-    </script>
+    </script> -->
 
 </body>
 </html>
