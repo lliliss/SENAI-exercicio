@@ -17,3 +17,13 @@ button{
     border: black;
     padding: 5px;
 }
+
+.tips{
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    background-color: white;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    border: 2px solid rgb(104, 225, 225);
+}

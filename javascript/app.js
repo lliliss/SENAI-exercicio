@@ -17,14 +17,38 @@ async function updateTable() {
             <td>${user.username}</td>
             <td>${user.email}</td>
             <td>
-                <button>saiba mais</button>
+                <button onclick="userDetails ($(user.id))">saiba mais</button>
             </td>
         </tr>
         `
     }
     tableBody.innerHTML = linhas
 
+}
+
+async function userDetails(userID) {
+    const resp = await fetch(`https://jsonplaceholder.typicode.com/users/${userID}`)
+    const user = await resp.json();
+
+    document.querySelector(".js-users-1").innerHTML = `${user.phone}`
+    document.querySelector(".js-users-1").innerHTML = `${user.website}`
+    document.querySelector(".js-users-1").innerHTML = `${user.address.street}`, `${user.address.city}`, `${user.address.zipcode}`
+    document.querySelector(".js-users-1").innerHTML = `${user.company.name}`
+    
+}
+
+async function getTips(){
+    const resp = await fetch("https://api.adviceslip.com/advice")
+    const tip = await resp.json
+
+    document.querySelector(".tips").innerText = tip.slip.advice
+
 
 }
 
 updateTable()
+updateDetails()
+
+segInterval(()=> {
+    getTips()
+}, 5000)
